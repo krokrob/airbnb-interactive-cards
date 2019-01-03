@@ -3,7 +3,7 @@
     <div class="row">
       <% @flats.each do |flat| %>
         <div class="col-xs-12 col-md-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.name.gsub('Le Wagon ', '').downcase %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.name.gsub('Le Wagon ', '').downcase %>');" data-flat-id="<%= flat.id %>">
             <h1><%= flat.name %></h1>
           </div>
         </div>
@@ -11,12 +11,11 @@
     </div>
   </div>
   <div class="map-container">
-    <div id="map"
-      style="width: 100%;height: 100vh;"
-      data-markers="<%= @markers.to_json %>"></div>
-  </div>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
 </div>
-
-<% content_for :after_js do %>
-  <%= javascript_pack_tag "map" %>
-<% end %>
