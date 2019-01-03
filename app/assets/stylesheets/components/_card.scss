@@ -5,4 +5,9 @@
   background-position: center;
   color: white;
   position: relative;
+  transition: all ease .3s;
+
+  &.highlight {
+    box-shadow: 0 0 0 1rem $blue;
+  }
 }
