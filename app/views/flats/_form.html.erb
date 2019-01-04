@@ -7,7 +7,7 @@
     <%= f.input :address %>
     <div id="add-photo">
       <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-      <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+      <%= f.input :photo, input_html: { class: 'img-thumbnail hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
     </div>
   </div>
 
