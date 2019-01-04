@@ -36,7 +36,7 @@ class FlatsController < ApplicationController
     @flat = Flat.new(flat_params)
 
     respond_to do |format|
-      if @flat.save
+      if @flat#.save <= to avoid creation of new flats by students
         format.html { redirect_to @flat, notice: 'Flat was successfully created.' }
         format.json { render :show, status: :created, location: @flat }
       else
